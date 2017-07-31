@@ -21,7 +21,7 @@ func init() {
 
 func newPool(server string) *redis.Pool {
 
-	return &redis.Pool{
+		return &redis.Pool{
 		MaxIdle:     3,
 		IdleTimeout: 240 * time.Second,
 
@@ -76,11 +76,11 @@ func Set(key string, value string) (error) {
 	return nil
 }
 
-func main() {
-	err := Set("abc", "123")
-	if err !=nil {
-		fmt.Println("set failed", err)
-	}
-	test, _ := Get("abc")
-	fmt.Println(string(test))
-}
+//func main() {
+//	err := Set("abc", "123")
+//	if err != nil {
+//		fmt.Println("set failed", err)
+//	}
+//	test, _ := Get("abc")
+//	fmt.Println(string(test))
+//}
