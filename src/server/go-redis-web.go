@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 )
 
-type RedisStr struct {
+type RedisObj struct {
 	Key   string
 	Value string
 }
@@ -36,7 +36,7 @@ func queryValue(writer http.ResponseWriter, request *http.Request) {
 	if err != nil {
 		http.Error(writer, "Get value from redis failed", 400)
 	}
-	strObj := RedisStr{Key: key, Value: string(value)}
+	strObj := RedisObj{Key: key, Value: string(value)}
 	json.NewEncoder(writer).Encode(strObj)
 
 }
