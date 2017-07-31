@@ -1,0 +1,50 @@
+body {
+    margin: auto;
+    margin-top: 20px;
+    padding: 0;
+    max-width: 1024px;
+    background: #f8f8f8;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    padding: 0 30px;
+}
+
+.left-wrapper {
+    float: left;
+    border-right: solid 1px #000000;
+    position: relative;
+    flex: 1;
+}
+
+.right-wrapper {
+    float: right;
+    flex: 1;
+}
+
+.key {
+}
+
+.queryButton {
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    background-color: #77ee77;
+    width: 80px;
+    border-radius: 25px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.result {
+    border-style: none;
+    width: 100%;
+    height: 650px;
+    resize: none;
+}
+
+.result:focus {
+    outline: none;
+}
