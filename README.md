@@ -9,8 +9,15 @@ $go build
 $./server
 ```
 
+###
+本地编译Linux版本
+```
+本地编译Linux版本(bash) GOOS=linux GOARCH=386 CGO_ENABLED=0 go build -o redis.view.linux
+```
+
 open browser
 
 http://localhost:9001
 
-[image](./images/redis-view.png)
+![image](./images/redis-view.png)
+
