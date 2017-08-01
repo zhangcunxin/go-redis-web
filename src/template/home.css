@@ -8,23 +8,33 @@ body {
 
 .container {
     margin: auto;
-    display: flex;
     padding: 0 30px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.content-container {
+    display: flex;
 }
 
 .left-wrapper {
     float: left;
-    border-right: solid 1px #000000;
     position: relative;
     flex: 1;
 }
 
 .right-wrapper {
+    position: relative;
     float: right;
     flex: 1;
 }
 
 .key {
+    width: 200px;
 }
 
 .queryButton {
@@ -38,11 +48,35 @@ body {
     text-align: center;
 }
 
+.button-container {
+    display: flex;
+    float: right;
+}
+
+.button-common {
+    flex: 1;
+    background-color: red;
+    width: 80px;
+    border-radius: 25px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.delete {
+
+}
+
+.save-changes {
+    margin:0 10px 0 0;
+}
+
 .result {
+    border-left: solid 1px #000000;
     border-style: none;
     width: 100%;
     height: 650px;
     resize: none;
+    flex: 1;
 }
 
 .result:focus {

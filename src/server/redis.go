@@ -60,7 +60,7 @@ func Get(key string) ([]byte, error) {
 	var data []byte
 	data, err := redis.Bytes(conn.Do("GET", key))
 	if err != nil {
-		return data, fmt.Errorf("error get key %s: %v", key, err)
+		return data, fmt.Errorf("error the key %s is nil", key)
 	}
 	return data, err
 }
@@ -74,6 +74,17 @@ func Set(key string, value string) (error) {
 		return fmt.Errorf("the err is: %v", err)
 	}
 	return nil
+}
+
+func Del(key string) (int, error) {
+	conn := Pool.Get()
+	defer conn.Close()
+
+	_, err := conn.Do("DEL", key)
+	if err != nil {
+		return 0, fmt.Errorf("the err is: %v", err)
+	}
+	return 1, nil
 }
 
 //func main() {

@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Redis home</title>
     <link rel="stylesheet" href="static/home.css"></link>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+
 </head>
 <body>
 <div class="container" id="app">
-    <div class="left-wrapper">
-        <div class="left-header">
-            <input class="key" placeholder="Key Name" v-model="key">
-            <div class="queryButton" @click="queryValue">查询</div>
+    <div class="title">Redis view</div>
+    <div class="content-container">
+        <div class="left-wrapper">
+            <div class="left-header">
+                <input class="key" placeholder="Key Name" v-model="key" list="itemlist">
+                <datalist id="itemlist">
+                    <option v-for="item in keyItems" :value="item"></option>
+                </datalist>
+                <div class="queryButton" @click="queryValue">query</div>
+            </div>
         </div>
-    </div>
-    <div class="right-wrapper">
-        <textarea class="result" v-model="value" ></textarea>
+        <div class="right-wrapper">
+            <div>
+                <span style="color: darkred;">result</span>
+                <div class="button-container">
+                    <div class="save-changes button-common" @click="saveValue">save</div>
+                    <div class="delete button-common" @click="deleteValue">delete</div>
+                </div>
+            </div>
+            <textarea class="result" v-model="value"></textarea>
+        </div>
     </div>
 </div>
 </body>
